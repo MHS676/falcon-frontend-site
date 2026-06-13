@@ -95,5 +95,3 @@ Import hooks: `useApp()`, `useUI()`, `useContact()`
 - **Services / News**: Edit `src/data/siteData.js`
 - **Navigation**: Edit `src/data/navLinks.js`
 - **Images**: Replace all `Image Placeholder` divs in components with `<img>` tags pointing to `/public/images/`
-# falcon-client-site
-# falcon-frontend-site
