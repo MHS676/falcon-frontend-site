@@ -32,7 +32,7 @@ const authReducer = (state, action) => {
     case 'REGISTER_ERROR':
       return { ...state, isLoading: false, error: action.payload }
     case 'LOGOUT':
-      return { ...initialState, token: null, isAuthenticated: false }
+      return { ...manned-guard-service, token: null, isAuthenticated: false }
     case 'RESTORE_TOKEN':
       return {
         ...state,

@@ -9,7 +9,7 @@ const initialState = {
     phone: '+880-2-9619919',
     email: 'info@falconsecurity.bd',
     address: 'FALCON Security Headquarters, Dhaka, Bangladesh',
-    founded: 2001,
+    founded: 1994,
     yearsOfExcellence: 25,
     workforce: '500+',
     businessesSecured: '597+',
