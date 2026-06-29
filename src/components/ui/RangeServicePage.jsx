@@ -66,7 +66,7 @@ function RangeServiceSidebar({ currentSlug, accent }) {
       <div className="bg-gray-50 border border-gray-100 p-6">
         <h3 className="text-xs font-black uppercase tracking-widest text-dark mb-4">Why FALCON®</h3>
         <ul className="space-y-2 text-sm text-gray-600">
-          {['Est. 1994 — 32+ years', '4,000+ trained professionals', '64 districts nationwide', '400+ active clients', 'ALSOK Japan partner'].map((f) => (
+          {['Est. 1994 — 32+ years', '4,000+ trained professionals', '64 districts nationwide', '400+ active clients'].map((f) => (
             <li key={f} className="flex items-center gap-2">
               <span className={`w-1.5 h-1.5 rounded-full shrink-0 ${accent.bg}`} />
               {f}

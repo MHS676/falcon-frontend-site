@@ -9,7 +9,7 @@ function StatsSection() {
     <section className="bg-gray-50 py-20">
       <div className="container-custom">
         <SectionHeading
-          eyebrow="Country's First Security Solution Company"
+          eyebrow="Security Solution Company"
           title={`Your Trusted Security Partner Since ${companyInfo.founded}`}
           description={`We have been at the forefront of the security industry, delivering trusted and innovative solutions to businesses nationwide. With over ${companyInfo.yearsOfExcellence} years in the industry, we have built a reputation for trust and reliability.`}
         />

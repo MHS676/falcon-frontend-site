@@ -10,7 +10,7 @@ const initialState = {
     email: 'info@falconsecurity.bd',
     address: 'FALCON Security Headquarters, Dhaka, Bangladesh',
     founded: 1994,
-    yearsOfExcellence: 25,
+    yearsOfExcellence: '32',
     workforce: '500+',
     businessesSecured: '597+',
     socialLinks: {

@@ -88,8 +88,7 @@ export function ArticleCard({ item, to, large = false }) {
 export function NewsSidebar({ currentKey }) {
   const recentFalcon = [
     'FALCON® Expands to Three New Districts',
-    'ALSOK Japan Partnership Deepened',
-    'National Training Centre Opens',
+        'National Training Centre Opens',
     'ISO 9001 Recertification Achieved',
   ]
 

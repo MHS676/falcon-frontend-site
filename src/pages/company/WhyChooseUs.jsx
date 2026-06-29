@@ -97,7 +97,7 @@ function WhyChooseUs() {
           <div className="max-w-3xl mx-auto text-center mb-16">
             <p className="text-[#3F7E47] font-bold text-xs uppercase tracking-widest mb-3">The FALCON Difference</p>
             <h2 className="text-3xl md:text-4xl font-black text-dark mb-6 leading-tight">
-              Bangladesh's First & Most Trusted Security Company
+              Bangladesh's Most Trusted Security Company
             </h2>
             <p className="text-gray-600 leading-relaxed">
               Falcon® security limited is not just a security provider — we are a security, planning, management 

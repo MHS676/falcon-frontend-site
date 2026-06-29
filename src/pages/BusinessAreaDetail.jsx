@@ -30,14 +30,14 @@ function BusinessAreaDetail() {
       {area.statistics && (
         <div className="bg-[#3F7E47]">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className={`grid grid-cols-2 md:grid-cols-${area.statistics.length} divide-x divide-white/20`}>
+            {/* <div className={`grid grid-cols-2 md:grid-cols-${area.statistics.length} divide-x divide-white/20`}>
               {area.statistics.map((stat, i) => (
                 <div key={i} className="px-6 py-6 text-center">
                   <p className="text-3xl md:text-4xl font-black text-white">{stat.value}</p>
                   <p className="text-white/80 text-xs font-semibold uppercase tracking-wide mt-1">{stat.label}</p>
                 </div>
               ))}
-            </div>
+            </div> */}
           </div>
         </div>
       )}
@@ -128,9 +128,9 @@ function BusinessAreaDetail() {
               </div>
 
               {/* CTA */}
-              <div className="bg-dark text-white p-8">
+              <div className="bg-gray-100 text-black p-8">
                 <h3 className="text-xl font-black mb-3">Interested in This Service?</h3>
-                <p className="text-gray-300 text-sm mb-6 leading-relaxed">
+                <p className="text-black text-sm mb-6 leading-relaxed">
                   Contact our team to discuss your requirements and get a customized quote.
                 </p>
                 <Link
