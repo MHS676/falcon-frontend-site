@@ -46,7 +46,7 @@ function TopBar() {
           <a
             href={companyInfo.socialLinks.youtube}
             aria-label="YouTube"
-            className="w-7 h-7 flex items-center justify-center rounded-full bg-red-600 hover:bg-red-700 transition-colors"
+            className="w-7 h-7 flex items-center justify-center rounded-full bg-[#3F7E47] hover:bg-red-700 transition-colors"
           >
             <FaYoutube className="w-3 h-3 text-white" />
           </a>

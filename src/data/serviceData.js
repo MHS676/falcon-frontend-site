@@ -557,13 +557,11 @@ export const SERVICE_PAGES = {
       { title: 'Basic Security Guard Training', desc: 'Foundation training covering security principles, access control, patrol techniques, emergency response, and professional conduct.' },
       { title: 'Supervisor & Officer Development', desc: 'Advanced training for supervisory and officer-grade personnel covering command, reporting, and team leadership.' },
       { title: 'Specialist Security Training', desc: 'Specialized programmes including aviation security, close protection, crowd management, and crisis response.' },
-      { title: 'ALSOK Premium Training Programme', desc: 'Japanese-standard security training delivered by ALSOK certified trainers, producing elite "Premium" security professionals.' },
       { title: 'Aviation Security Programme', desc: 'Dedicated aviation security training and an operational centre in Uttara supporting airport security operations.' },
       { title: 'Refresher & CPD Training', desc: 'Regular refresher courses and continuous professional development for all serving security personnel.' },
     ],
     whyUs: [
       'Bangladesh\'s first dedicated private security academy',
-      'Partnership with ALSOK Japan — global security leader',
       'Purpose-built training facility',
       'Certified instructors with operational backgrounds',
       'BSB and BNPA curriculum alignment',
