@@ -26,7 +26,7 @@ function Footer() {
   const { companyInfo } = useApp()
 
   return (
-    <footer className="bg-dark text-white">
+    <footer className="bg-gray-200 text-white">
       <div className="container-custom py-14">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
           {/* Brand */}
@@ -36,7 +36,7 @@ function Footer() {
             alt="Company Logo"
             className="w-44 h-24 lg:w-64 lg:h-24 object-contain group-hover:brightness-110 transition-filter"
           />
-            <p className="text-gray-400 text-sm leading-relaxed mb-6">
+            <p className="text-black text-sm leading-relaxed mb-6">
               To synergize the integration of human resources with automation to create efficient
               security solutions for the community.
             </p>
@@ -64,7 +64,7 @@ function Footer() {
           {/* Links */}
           {Object.entries(footerLinks).map(([heading, links]) => (
             <div key={heading}>
-              <h4 className="font-semibold text-white text-sm uppercase tracking-wider mb-5">
+              <h4 className="font-semibold text-black text-sm uppercase tracking-wider mb-5">
                 {heading}
               </h4>
               <ul className="space-y-2.5">
@@ -72,7 +72,7 @@ function Footer() {
                   <li key={link.to}>
                     <Link
                       to={link.to}
-                      className="text-gray-400 text-sm hover:text-[#3F7E47] transition-colors"
+                      className="text-black text-sm hover:text-[#3F7E47] transition-colors"
                     >
                       {link.label}
                     </Link>
@@ -84,23 +84,23 @@ function Footer() {
 
           {/* Contact */}
           <div>
-            <h4 className="font-semibold text-white text-sm uppercase tracking-wider mb-5">
+            <h4 className="font-semibold text-black text-sm uppercase tracking-wider mb-5">
               Find Us
             </h4>
             <ul className="space-y-3">
-              <li className="flex items-start gap-3 text-gray-400 text-sm">
+              <li className="flex items-start gap-3 text-black text-sm">
                 <MdEmail className="w-4 h-4 mt-0.5 shrink-0 text-[#3F7E47]" />
                 <a href={`mailto:${companyInfo.email}`} className="hover:text-[#3F7E47] transition-colors">
                   {companyInfo.email}
                 </a>
               </li>
-              <li className="flex items-start gap-3 text-gray-400 text-sm">
+              <li className="flex items-start gap-3 text-black text-sm">
                 <MdPhone className="w-4 h-4 mt-0.5 shrink-0 text-[#3F7E47]" />
                 <a href={`tel:${companyInfo.phone}`} className="hover:text-[#3F7E47] transition-colors">
                   {companyInfo.phone}
                 </a>
               </li>
-              <li className="flex items-start gap-3 text-gray-400 text-sm">
+              <li className="flex items-start gap-3 text-black text-sm">
                 <MdLocationOn className="w-4 h-4 mt-0.5 shrink-0 text-[#3F7E47]" />
                 <span>{companyInfo.address}</span>
               </li>
@@ -110,7 +110,7 @@ function Footer() {
       </div>
 
       {/* Bottom Bar */}
-      <div className="border-t border-dark-border">
+      <div className="border-t border-gray-300">
         <div className="container-custom py-4 flex flex-col sm:flex-row items-center justify-between gap-2 text-xs text-gray-500">
           <p>Developed by: <span className="text-gray-400">Your Agency</span></p>
           <p>© {new Date().getFullYear()} Falcon. ALL RIGHTS ARE RESERVED</p>

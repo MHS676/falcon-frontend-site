@@ -135,8 +135,8 @@ export default function HeroSection() {
               className="flex items-center gap-3"
               style={{ animation: 'heroFadeUp 0.6s ease both' }}
             >
-              <span className="w-8 h-0.5 bg-[#3F7E47] inline-block" />
-              <p className="text-[#3F7E47] font-bold text-xs uppercase tracking-[0.25em]">
+              <span className="w-8 h-0.5 bg-[#5ac26e] inline-block" />
+              <p className="text-[#5ac26e] font-bold text-xs uppercase tracking-[0.25em]">
                 {slide.eyebrow}
               </p>
             </div>
@@ -149,7 +149,7 @@ export default function HeroSection() {
             >
               {slide.title}
               <br />
-              <span className="text-[#3F7E47]">{slide.highlight}</span>
+              <span className="text-[#5ac26e]">{slide.highlight}</span>
             </h1>
 
             {/* Subtitle */}
@@ -169,7 +169,7 @@ export default function HeroSection() {
             >
               <Link
                 to={slide.cta.to}
-                className="flex items-center gap-2 bg-[#3F7E47] text-white px-6 py-3 text-sm font-bold uppercase tracking-wider hover:bg-[#3F7E47] transition-colors duration-200 group"
+                className="flex items-center gap-2 bg-[#5ac26e] text-white px-6 py-3 text-sm font-bold uppercase tracking-wider hover:bg-[#5ac26e] transition-colors duration-200 group"
               >
                 {slide.cta.label}
                 <FiArrowRight className="group-hover:translate-x-1 transition-transform" />
@@ -188,14 +188,14 @@ export default function HeroSection() {
       {/* Prev / Next arrows */}
       <button
         onClick={prev}
-        className="absolute left-4 top-1/2 -translate-y-1/2 z-30 w-11 h-11 flex items-center justify-center bg-black/30 border border-white/20 text-white hover:bg-[#3F7E47] hover:border-primary transition-colors duration-200"
+        className="absolute left-4 top-1/2 -translate-y-1/2 z-30 w-11 h-11 flex items-center justify-center bg-black/30 border border-white/20 text-white hover:bg-[#5ac26e] hover:border-primary transition-colors duration-200"
         aria-label="Previous slide"
       >
         <FiChevronLeft className="w-5 h-5" />
       </button>
       <button
         onClick={next}
-        className="absolute right-4 top-1/2 -translate-y-1/2 z-30 w-11 h-11 flex items-center justify-center bg-black/30 border border-white/20 text-white hover:bg-[#3F7E47] hover:border-primary transition-colors duration-200"
+        className="absolute right-4 top-1/2 -translate-y-1/2 z-30 w-11 h-11 flex items-center justify-center bg-black/30 border border-white/20 text-white hover:bg-[#5ac26e] hover:border-primary transition-colors duration-200"
         aria-label="Next slide"
       >
         <FiChevronRight className="w-5 h-5" />
@@ -216,7 +216,7 @@ export default function HeroSection() {
           >
             {i === current && (
               <span
-                className="absolute left-0 top-0 h-full bg-[#3F7E47]"
+                className="absolute left-0 top-0 h-full bg-[#5ac26e]"
                 style={{ width: `${progress}%`, transition: 'none' }}
               />
             )}

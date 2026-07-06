@@ -1,123 +1,127 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import PageHero from '../../components/ui/PageHero'
 import { LEADERSHIP } from '../../data/companyData'
-import { HiOutlineX } from 'react-icons/hi'
-
-const TIER_LABELS = {
-  executive: 'Executive Leadership',
-  director: 'Directors',
-  'c-suite': 'C-Suite',
-  savp: 'Senior Leadership',
-}
+import { LuX, LuPhone, LuMail, LuLayers, LuChevronRight } from 'react-icons/lu'
 
 const TIER_ORDER = ['executive', 'director', 'c-suite', 'savp']
 
-function LeaderCard({ leader, onClick }) {
+function HorizontalLeaderCard({ leader, onClick, isExecutive }) {
+  const initials = leader.name 
+    ? leader.name.split(' ').map(n => n[0]).join('').substring(0, 2).toUpperCase() 
+    : 'FC'
+
   return (
     <div
-      className="group relative overflow-hidden rounded-2xl bg-white shadow-sm hover:shadow-2xl transition-all duration-500 cursor-pointer"
       onClick={() => onClick(leader)}
+      className="w-full group/card relative bg-[#E6E5E0] rounded-[24px] p-4 border border-white/30 shadow-[6px_6px_12px_#c2c1bc,-6px_-6px_12px_#ffffff] hover:shadow-[2px_2px_5px_#c2c1bc,-2px_-2px_5px_#ffffff] transition-all duration-300 cursor-pointer text-left"
     >
-      {/* Photo Container */}
-      <div className="relative overflow-hidden bg-gradient-to-br from-gray-100 to-gray-200 aspect-[3/3.5]">
-        {leader.image ? (
-          <img 
-            src={leader.image} 
-            alt={leader.name} 
-            className="w-full h-full object-cover object-top group-hover:scale-110 transition-transform duration-700" 
-          />
-        ) : (
-          <div className="w-full h-full flex flex-col items-center justify-center">
-            <div className="w-24 h-24 rounded-full bg-gradient-to-br from-primary/20 to-primary/5 flex items-center justify-center">
-              <span className="text-5xl font-black text-primary/20">{leader.name[0]}</span>
-            </div>
-          </div>
-        )}
+      <div className="flex flex-col sm:flex-row gap-5 sm:gap-6 items-center">
         
-        {/* Gradient Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-        
-        {/* View Profile Indicator */}
-        <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-          <div className="px-4 py-2 bg-white/95 rounded-full text-dark font-semibold text-sm">
-            View Profile
+        {/* Left Side: Photo Canvas Container */}
+        <div className="w-32 h-32 sm:w-36 sm:h-36 rounded-[20px] bg-[#E6E5E0] p-1.5 shadow-[inset_3px_3px_6px_#b8b7b2,inset_-3px_-3px_6px_#ffffff] shrink-0 border border-neutral-300/20">
+          <div className={`w-full h-full rounded-[14px] overflow-hidden relative shadow-sm ${isExecutive ? 'border-[2px] border-[#C3A37A]' : ''}`}>
+            {leader.image ? (
+              <img 
+                src={leader.image} 
+                alt={leader.name} 
+                className="w-full h-full object-cover object-top filter brightness-[0.98] contrast-[1.02]" 
+              />
+            ) : (
+              <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-[#DDDCD6] to-[#ECEBE5] text-neutral-400 font-bold text-2xl">
+                {initials}
+              </div>
+            )}
           </div>
         </div>
-      </div>
-      
-      {/* Content */}
-      <div className="p-5 bg-white">
-        <h3 className="font-black text-dark text-base leading-tight tracking-tight">{leader.name}</h3>
-        <p className="text-xs text-primary font-bold mt-2 leading-relaxed uppercase tracking-wider">{leader.role}</p>
-        
-        {/* Accent line */}
-        <div className="mt-4 h-1 w-8 bg-gradient-to-r from-primary to-primary/40 rounded-full group-hover:w-12 transition-all duration-300" />
+
+        {/* Right Side: Information Matrix Details */}
+        <div className="flex-1 text-center sm:text-left flex flex-col justify-between self-stretch py-1">
+          <div>
+            <div className="flex flex-col sm:flex-row sm:items-center gap-1.5 justify-center sm:justify-between pr-4">
+              <h3 className="font-bold text-neutral-800 text-base sm:text-lg tracking-tight leading-tight">
+                {leader.name}
+              </h3>
+              <span className={`w-fit mx-auto sm:mx-0 text-[9px] font-black px-2 py-0.5 rounded-md uppercase tracking-wider ${isExecutive ? 'text-[#56B967] bg-[#56B967]/10 border border-[#56B967]/20' : 'text-neutral-500 bg-neutral-300/40'}`}>
+                {isExecutive ? 'Corporate Directive' : 'Executive Management'}
+              </span>
+            </div>
+            
+            <p className="text-[11px] text-neutral-500 font-bold tracking-wider uppercase mt-0.5">
+              {leader.role}
+            </p>
+            
+            <p className="text-neutral-600 text-xs sm:text-sm mt-2 line-clamp-2 max-w-3xl pr-4 leading-relaxed font-normal">
+              {leader.bio || "Detailed professional background registry records are fully archived within internal corporate clearance logs."}
+            </p>
+          </div>
+
+          {/* Action Interface Dials Footer */}
+          <div className="mt-4 sm:mt-0 pt-3 sm:pt-0 border-t sm:border-t-0 border-neutral-300/40 flex justify-center sm:justify-start gap-3 items-center">
+            {[{ icon: LuPhone }, { icon: LuMail }, { icon: LuLayers }].map((item, idx) => (
+              <div key={idx} className="w-6.5 h-6.5 rounded-full bg-[#E6E5E0] flex items-center justify-center text-neutral-500 text-xs shadow-[2px_2px_4px_#c2c1bc,-2px_-2px_4px_#ffffff] hover:shadow-[inset_1px_1px_2px_#c2c1bc] transition-all duration-200 p-1.5">
+                <item.icon className="w-3.5 h-3.5 text-neutral-600" />
+              </div>
+            ))}
+            <span className="hidden sm:inline-block ml-auto text-[10px] font-bold text-[#3F7E47] pr-4 opacity-0 group-hover/card:opacity-100 transition-opacity duration-300">
+              View Profile Registry →
+            </span>
+          </div>
+        </div>
+
       </div>
     </div>
   )
 }
 
 function LeaderModal({ leader, onClose }) {
+  useEffect(() => {
+    document.body.style.overflow = 'hidden'
+    return () => { document.body.style.overflow = 'unset' }
+  }, [])
+
   if (!leader) return null
+
   return (
-    <div className="fixed inset-0 z-[999] flex items-center justify-center p-4 bg-black/50 backdrop-blur-md" onClick={onClose}>
-      <div className="relative bg-white max-w-2xl w-full shadow-2xl rounded-3xl overflow-hidden animate-slide-up">
-        {/* Close Button */}
-        <button
-          onClick={onClose}
-          className="absolute top-6 right-6 z-10 w-10 h-10 bg-gray-100 hover:bg-primary hover:text-white flex items-center justify-center transition-all duration-300 rounded-full group"
-        >
-          <HiOutlineX className="w-5 h-5 group-hover:rotate-90 transition-transform duration-300" />
+    <div className="fixed inset-0 z-[999] flex items-center justify-center p-4 bg-neutral-900/30 backdrop-blur-md transition-opacity duration-300" onClick={onClose}>
+      <div className="relative bg-[#E6E5E0] max-w-lg w-full shadow-[20px_20px_60px_#bcbbb6,-20px_-20px_60px_#ffffff] rounded-[32px] overflow-hidden flex flex-col max-h-[85vh] border border-[#F5F4EE]" onClick={(e) => e.stopPropagation()}>
+        <button onClick={onClose} className="absolute top-5 right-5 z-30 w-8 h-8 bg-[#E6E5E0] text-neutral-700 flex items-center justify-center shadow-[3px_3px_6px_#c2c1bc,-3px_-3px_6px_#ffffff] hover:shadow-[inset_2px_2px_4px_#c2c1bc] transition-all rounded-full">
+          <LuX className="w-4 h-4" />
         </button>
 
-        {/* Image Section */}
-        <div className="relative bg-gradient-to-br from-gray-200 to-gray-100 aspect-video overflow-hidden">
-          {leader.image ? (
-            <img 
-              src={leader.image} 
-              alt={leader.name} 
-              className="w-full h-full object-cover object-top" 
-            />
-          ) : (
-            <div className="w-full h-full flex items-center justify-center">
-              <div className="w-32 h-32 rounded-full bg-primary/10 flex items-center justify-center">
-                <span className="text-6xl font-black text-primary/20">{leader.name[0]}</span>
-              </div>
+        <div className="overflow-y-auto p-6 sm:p-8">
+          <div className="flex flex-col sm:flex-row gap-6 items-center sm:items-start text-center sm:text-left mb-6">
+            <div className="w-24 h-24 shrink-0 rounded-[20px] bg-[#E6E5E0] p-1.5 shadow-[inset_4px_4px_8px_#b8b7b2,inset_-4px_-4px_8px_#ffffff]">
+              {leader.image ? (
+                <img src={leader.image} alt={leader.name} className="w-full h-full object-cover rounded-[14px]" />
+              ) : (
+                <div className="w-full h-full flex items-center justify-center rounded-[14px] bg-[#DDDCD6] text-neutral-600 font-bold text-xl">
+                  {leader.name.split(' ').map(n => n[0]).join('')}
+                </div>
+              )}
             </div>
-          )}
-          
-          {/* Image Overlay Gradient */}
-          <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
-        </div>
-
-        {/* Content Section */}
-        <div className="p-8 md:p-10">
-          {/* Header */}
-          <div className="mb-6 pb-6 border-b-2 border-primary/20">
-            <p className="text-primary text-xs font-black uppercase tracking-widest mb-2 opacity-70">{leader.tier === 'executive' ? 'Chairman' : leader.tier === 'director' ? 'Director' : 'Management'}</p>
-            <h2 className="text-3xl md:text-4xl font-black text-dark mb-3">{leader.name}</h2>
-            <p className="text-lg text-primary font-semibold">{leader.role}</p>
+            <div>
+              <span className="text-[9px] font-black text-white bg-[#3F7E47] px-2.5 py-0.5 rounded-full uppercase tracking-widest mb-1.5 inline-block">
+                Corporate Core
+              </span>
+              <h2 className="text-xl font-bold text-neutral-900 tracking-tight">{leader.name}</h2>
+              <p className="text-xs text-neutral-500 font-semibold mt-0.5 uppercase tracking-wider">{leader.role}</p>
+            </div>
           </div>
 
-          {/* Bio */}
-          <p className="text-gray-700 text-base leading-relaxed font-medium">
-            {leader.bio}
+          <div className="h-px bg-neutral-300/60 w-full mb-5" />
+          <p className="text-neutral-700 text-sm leading-relaxed font-medium bg-[#DDDCD6]/30 p-4 rounded-xl shadow-[inset_1px_1px_3px_rgba(0,0,0,0.05)]">
+            {leader.bio || "Detailed professional background records are fully archived within internal corporate clearance systems."}
           </p>
-
-          {/* Accent Elements */}
-          <div className="mt-8 flex gap-3">
-            <div className="h-1 flex-1 bg-gradient-to-r from-primary to-primary/30 rounded-full" />
-            <div className="h-1 w-8 bg-primary/20 rounded-full" />
-          </div>
         </div>
       </div>
     </div>
   )
 }
 
-function OurLeadership() {
+export default function OurLeadership() {
   const [selected, setSelected] = useState(null)
 
+  // Map elements directly from global leadership arrays
   const grouped = TIER_ORDER.reduce((acc, tier) => {
     const members = LEADERSHIP.filter((l) => l.tier === tier)
     if (members.length) acc[tier] = members
@@ -125,95 +129,58 @@ function OurLeadership() {
   }, {})
 
   return (
-    <div className="animate-fade-in">
-      <PageHero
-        eyebrow="The Team"
-        title={<>Our <span className="text-[#3F7E47]">Leadership</span></>}
-        subtitle="Experienced professionals guiding FALCON's vision, operations, and growth."
-        breadcrumbs={[{ label: 'Company', to: '/company/overview' }, { label: 'Our Leadership' }]}
-        backgroundImage="/documents/navlink_banner/company/leader.jpg"
-      />
+    <div className="bg-[#E6E5E0] min-h-screen pb-32 font-sans overflow-x-hidden selection:bg-[#3F7E47]/20 selection:text-[#3F7E47]">
+      
+      <div className="max-w-7xl mx-auto px-4 pt-10 sm:px-6 lg:px-8">
+        <div className="relative rounded-[32px] overflow-hidden bg-gradient-to-br from-white/40 via-white/10 to-transparent p-8 sm:p-12 border border-white/40 shadow-[10px_10px_30px_#c2c1bc,-10px_-10px_30px_#ffffff] backdrop-blur-md">
+          <div className="absolute right-8 top-1/2 -translate-y-1/2 opacity-5 hidden md:block select-none">
+            <span className="text-9xl font-black tracking-tighter">FALCON</span>
+          </div>
+          <div className="max-w-xl text-center mx-auto">
+            <span className="text-[10px] font-extrabold tracking-[0.3em] text-[#3F7E47] uppercase bg-white/60 px-3 py-1 rounded-full shadow-sm">THE TEAM</span>
+            <h1 className="text-3xl sm:text-4xl font-black text-neutral-800 tracking-tight mt-4 mb-3">
+              {"<>"} Our <span className="text-[#3F7E47] font-serif italic font-light">LEADERSHIP</span> {"</>"}
+            </h1>
+            <p className="text-xs sm:text-sm text-neutral-600 font-medium leading-relaxed">
+              Experienced professionals guiding FALCON's global enterprise vision, strategic operations, and market growth.
+            </p>
+            <div className="mt-5 flex justify-center gap-1.5 text-[10px] font-bold text-neutral-500 bg-[#DDDCD6]/50 w-fit mx-auto px-3 py-1 rounded-full">
+              <span>Company</span> <LuChevronRight className="mt-0.5" /> <span className="text-neutral-800">Our Leadership</span>
+            </div>
+          </div>
+        </div>
+      </div>
 
-      <section className="py-20 bg-gradient-to-b from-white via-white to-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-20">
+      <section className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 mt-16 relative">
+        
+        <div className="hidden lg:flex justify-between items-center border-b border-neutral-400/40 pb-3 mb-12 px-2">
+          <span className="text-[11px] font-black tracking-widest text-neutral-800">EXECUTIVE COMMAND STRUCTURE</span>
+          <span className="text-[11px] font-black tracking-widest text-neutral-400">GLOBAL REGISTER</span>
+        </div>
+
+        {/* Unified vertical list alignment (Side Tier labels removed) */}
+        <div className="space-y-6">
           {TIER_ORDER.map((tier) => {
             const members = grouped[tier]
             if (!members) return null
 
-            const isMD = tier === 'executive'
-
             return (
-              <div key={tier}>
-                {/* Section Header */}
-                <div className="flex items-center gap-4 mb-12">
-                  <div className="h-1.5 w-12 bg-gradient-to-r from-primary to-primary/50 rounded-full" />
-                  <h2 className="text-sm font-black uppercase tracking-widest text-gray-400 letter-spacing-wide">
-                    {TIER_LABELS[tier]}
-                  </h2>
-                  <div className="flex-1 h-px bg-gradient-to-r from-gray-200 to-transparent" />
-                </div>
-
-                {isMD ? (
-                  /* Hero card for Chairman */
-                  <div
-                    className="group relative rounded-3xl overflow-hidden bg-white shadow-lg hover:shadow-2xl transition-all duration-500 cursor-pointer border border-gray-100"
-                    onClick={() => setSelected(members[0])}
-                  >
-                    <div className="flex flex-col md:flex-row gap-0">
-                      {/* Image */}
-                      <div className="md:w-80 bg-gradient-to-br from-gray-100 to-gray-200 aspect-square md:aspect-auto overflow-hidden shrink-0 relative">
-                        {members[0].image ? (
-                          <img 
-                            src={members[0].image} 
-                            alt={members[0].name} 
-                            className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-700" 
-                          />
-                        ) : (
-                          <div className="w-full h-full flex items-center justify-center">
-                            <span className="text-8xl font-black text-primary/10">{members[0].name[0]}</span>
-                          </div>
-                        )}
-                        <div className="absolute inset-0 bg-gradient-to-r from-transparent to-white/10 group-hover:to-white/20 transition-all duration-500" />
-                      </div>
-
-                      {/* Content */}
-                      <div className="p-8 md:p-10 flex flex-col justify-center flex-1">
-                        <p className="text-primary text-xs font-black uppercase tracking-widest mb-3 opacity-70">Chairman</p>
-                        <h3 className="text-3xl md:text-4xl font-black text-dark mb-3 leading-tight">{members[0].name}</h3>
-                        <p className="text-lg text-primary font-semibold mb-6">{members[0].role}</p>
-                        <p className="text-gray-600 text-base leading-relaxed font-medium line-clamp-3">{members[0].bio}</p>
-                        
-                        {/* View More indicator */}
-                        <div className="mt-6 inline-flex items-center text-primary font-bold text-sm gap-2 group/btn">
-                          <span>View Full Profile</span>
-                          <svg className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                          </svg>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                ) : (
-                  <div className={`grid gap-6 ${
-                    tier === 'savp'
-                      ? 'grid-cols-2 sm:grid-cols-3 lg:grid-cols-4'
-                      : 'grid-cols-1 sm:grid-cols-2 lg:grid-cols-3'
-                  }`}>
-                    {members.map((leader) => (
-                      <LeaderCard key={leader.id} leader={leader} onClick={setSelected} />
-                    ))}
-                  </div>
-                )}
+              <div key={tier} className="w-full flex flex-col gap-5">
+                {members.map((leader) => (
+                  <HorizontalLeaderCard 
+                    key={leader.id} 
+                    leader={leader} 
+                    onClick={setSelected} 
+                    isExecutive={tier === 'executive'} 
+                  />
+                ))}
               </div>
             )
           })}
         </div>
       </section>
 
-      {/* Modal */}
       {selected && <LeaderModal leader={selected} onClose={() => setSelected(null)} />}
     </div>
   )
 }
-
-export default OurLeadership

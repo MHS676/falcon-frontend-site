@@ -37,7 +37,7 @@ function MegaDropdown({ groups, onClose }) {
                   onClick={onClose}
                   className={({ isActive }) =>
                     `flex items-center gap-2 px-2 py-2 text-[15px] rounded transition-all duration-150 group/item
-                    ${isActive ? 'text-[#3F7E47] font-bold bg-red-50' : 'text-gray-600 hover:text-[#3F7E47] hover:bg-gray-50'}`
+                    ${isActive ? 'text-[#3F7E47] font-bold bg-green-50' : 'text-gray-600 hover:text-[#3F7E47] hover:bg-gray-50'}`
                   }
                 >
                   <HiOutlineChevronRight className="w-3.5 h-3.5 shrink-0 opacity-0 group-hover/item:opacity-100 transition-opacity text-[#3F7E47]" />

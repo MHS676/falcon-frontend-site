@@ -29,7 +29,7 @@ function TestimonialsSection() {
               href="#"
               className="mt-2 flex items-center gap-2 bg-white border border-gray-300 px-3 py-2 text-xs font-semibold text-gray-700 hover:bg-gray-50 transition-colors"
             >
-              <FaGoogle className="text-red-500 w-3.5 h-3.5" />
+              <FaGoogle className="text-green-700 w-3.5 h-3.5" />
               Review us on
             </a>
           </div>

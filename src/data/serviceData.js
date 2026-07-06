@@ -550,7 +550,6 @@ export const SERVICE_PAGES = {
     best practice with local operational expertise to produce security professionals of the highest calibre.`,
     highlights: [
       { value: 'National', label: 'Training Centre' },
-      { value: 'ALSOK', label: 'Japan Partnership' },
       { value: 'Certified', label: 'Programmes' },
       { value: 'Aviation', label: 'Specialist Unit' },
     ],
