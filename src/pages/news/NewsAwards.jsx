@@ -49,12 +49,12 @@ export default function NewsAwards() {
 
   return (
     <div className="animate-fade-in">
-      <PageHero
+      {/* <PageHero
         eyebrow="News & Events"
         title={<>Awards & <span className="text-[#3F7E47]">Recognition</span></>}
         subtitle="Celebrating FALCON Security's excellence — nationally and internationally recognised for outstanding service and innovation."
         breadcrumbs={[{ label: 'News & Events' }, { label: 'Awards' }]}
-      />
+      /> */}
 
       {/* Trophy bar */}
       <div className="bg-[#3F7E47]">

@@ -112,7 +112,7 @@ export default function HeroSection() {
           <img
             src={s.image}
             alt=""
-            className="w-full h-full object-cover object-center"
+            className="w-full h-full object-cover object-center img-sharp"
             style={{
               transform: i === current ? 'scale(1.06)' : 'scale(1)',
               transition: 'transform 6s ease-out',

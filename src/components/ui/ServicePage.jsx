@@ -89,7 +89,7 @@ export default function ServicePage({ slug }) {
 
   return (
     <div className="animate-fade-in">
-      <PageHero
+      {/* <PageHero
         eyebrow={page.eyebrow}
         title={
           <>
@@ -105,7 +105,7 @@ export default function ServicePage({ slug }) {
         subtitle={page.tagline}
         breadcrumbs={[{ label: 'What We Offer', to: '/what-we-offer/physical-security' }, { label: page.title }]}
         backgroundImage={page.banner}
-      />
+      /> */}
 
       {/* ── Stats bar ── */}
       {/* <div className={`${accent.bg}`}>

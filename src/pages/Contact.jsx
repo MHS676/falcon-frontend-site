@@ -10,7 +10,7 @@ function Contact() {
     <ContactProvider>
       <div className="animate-fade-in">
         {/* Hero */}
-        <div className="bg-gray-200 text-black py-20">
+        {/* <div className="bg-gray-200 text-black py-20">
           <div className="container-custom">
             <p className="text-[#3F7E47] font-semibold text-sm uppercase tracking-widest mb-3">
               Get In Touch
@@ -19,7 +19,7 @@ function Contact() {
               Contact <span className="text-[#3F7E47]">Us</span>
             </h1>
           </div>
-        </div>
+        </div> */}
 
         {/* Main */}
         <section className="py-20 bg-gray-50">

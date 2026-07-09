@@ -1,6 +1,7 @@
 import { Routes, Route, Navigate } from 'react-router-dom'
 import { AuthProvider } from './context/AuthContext'
 import { ProtectedRoute } from './components/auth/ProtectedRoute'
+import { ScrollToTop } from './components/layout/ScrollToTop'
 import Layout from './components/layout/Layout'
 import Home from './pages/Home'
 import Contact from './pages/Contact'
@@ -14,6 +15,7 @@ import BusinessAreaDetail from './pages/BusinessAreaDetail'
 import AdminLogin from './pages/admin/AdminLogin'
 import AdminRegister from './pages/admin/AdminRegister'
 import Dashboard from './pages/admin/Dashboard'
+import AdminDashboard from './pages/AdminDashboard'
 import EditPhysicalSecurity from './pages/admin/EditPhysicalSecurity'
 import EditElectronicSecurity from './pages/admin/EditElectronicSecurity'
 import EditCentralMonitoring from './pages/admin/EditCentralMonitoring'
@@ -74,6 +76,7 @@ import Awards from './pages/company/Awards'
 function App() {
   return (
     <AuthProvider>
+      <ScrollToTop />
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
@@ -257,6 +260,16 @@ function App() {
           element={
             <ProtectedRoute>
               <EditGallery />
+            </ProtectedRoute>
+          }
+        />
+
+        {/* New Admin Dashboard */}
+        <Route
+          path="/admin/content/pillars"
+          element={
+            <ProtectedRoute>
+              <AdminDashboard />
             </ProtectedRoute>
           }
         />

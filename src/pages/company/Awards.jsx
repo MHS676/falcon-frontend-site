@@ -18,13 +18,13 @@ function Awards() {
 
   return (
     <div className="animate-fade-in">
-      <PageHero
+      {/* <PageHero
         eyebrow="Recognition"
         title={<>Awards & <span className="text-[#3F7E47]">Certificates</span></>}
         subtitle="FALCON's commitment to excellence has been recognized at the highest levels of the industry."
         breadcrumbs={[{ label: 'Company', to: '/company/overview' }, { label: 'Awards' }]}
         backgroundImage="/documents/navlink_banner/company/Certificates.jpeg"
-      />
+      /> */}
 
       {/* ── Coming soon banner ── */}
       {/* <section className="bg-dark py-24 relative overflow-hidden">

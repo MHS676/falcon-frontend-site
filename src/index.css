@@ -14,11 +14,71 @@
   body {
     @apply font-sans text-gray-900 bg-white antialiased;
   }
+
+  /* ─── Image Optimization for Crystal Clear Display ─── */
+  img {
+    @apply max-w-full h-auto;
+    image-rendering: crisp-edges;
+    image-rendering: -webkit-optimize-contrast;
+  }
+
+  img[alt] {
+    @apply block;
+  }
+
+  /* High-quality background images */
+  [style*="background-image"] {
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* SVG optimization */
+  svg {
+    @apply block;
+    shape-rendering: crispEdges;
+  }
 }
 
 @layer components {
   .container-custom {
     @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  /* ─── Image Clarity Utilities ─── */
+  .img-sharp {
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+    filter: contrast(1.05);
+  }
+
+  .img-clear {
+    @apply object-cover object-center;
+    image-rendering: -webkit-optimize-contrast;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  .img-high-quality {
+    @apply img-clear;
+    filter: brightness(1.02) contrast(1.08) saturate(1.1);
+  }
+
+  .bg-image-sharp {
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    image-rendering: -webkit-optimize-contrast;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .banner-image {
+    @apply bg-image-sharp;
+    background-blend-mode: overlay;
   }
 
   .btn-primary {
@@ -40,6 +100,7 @@
   .section-subheading {
     @apply text-base text-gray-500 max-w-2xl;
   }
+
 
   .card {
     @apply bg-white border border-gray-200 rounded-none shadow-sm transition-shadow duration-300 hover:shadow-md overflow-hidden;

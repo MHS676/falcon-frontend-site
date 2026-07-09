@@ -17,7 +17,7 @@ function BlogArticle({ post, onClose }) {
 
       {post.image && (
         <div className="w-full h-56 md:h-72 rounded-xl overflow-hidden mb-6">
-          <img src={post.image} alt={post.title} className="w-full h-full object-cover" />
+          <img src={post.image} alt={post.title} className="w-full h-full object-cover img-sharp" />
         </div>
       )}
 
@@ -96,12 +96,12 @@ export default function BlogPage() {
 
   return (
     <div className="animate-fade-in">
-      <PageHero
+      {/* <PageHero
         eyebrow="News & Events"
         title={<>Security <span className="text-[#3F7E47]">Blog</span></>}
         subtitle="Expert insights, industry tips, and thought leadership from the FALCON Security team."
         breadcrumbs={[{ label: 'News & Events' }, { label: 'Blog' }]}
-      />
+      /> */}
 
       <NewsPageShell sidebar={<NewsSidebar currentKey="blog" />}>
         {active ? (

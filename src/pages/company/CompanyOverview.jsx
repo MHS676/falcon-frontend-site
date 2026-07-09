@@ -33,13 +33,13 @@ const VALUES = [
 function CompanyOverview() {
   return (
     <div className="animate-fade-in">
-      <PageHero
+      {/* <PageHero
         eyebrow="About FALCON"
         title={<>Company <span className="text-[#3F7E47]">Overview</span></>}
         subtitle="Bangladesh's first and most trusted private security solutions company since 1994."
         breadcrumbs={[{ label: 'Company', to: '/company/overview' }, { label: 'Overview' }]}
         backgroundImage="/documents/navlink_banner/company/overview1.jpeg"
-      />
+      /> */}
 
       {/* ── Overview ── */}
       <section className="py-20 bg-white">

@@ -83,13 +83,13 @@ const DIFFERENTIATORS = [
 function WhyChooseUs() {
   return (
     <div className="animate-fade-in">
-      <PageHero
+      {/* <PageHero
         eyebrow="Your Security Partner"
         title={<>Why Choose <span className="text-[#3F7E47]">FALCON</span></>}
         subtitle="Industry-leading security solutions backed by 32 years of excellence, military expertise, and unwavering commitment to protection."
         breadcrumbs={[{ label: 'Company', to: '/company/overview' }, { label: 'Why Choose Us' }]}
         backgroundImage="/documents/navlink_banner/company/why-choose-us-1.jpg"
-      />
+      /> */}
 
       {/* Introduction */}
       <section className="py-20 bg-white">

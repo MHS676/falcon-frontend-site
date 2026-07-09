@@ -61,11 +61,11 @@ function JoinUs() {
   if (submitted) {
     return (
       <div className="animate-fade-in">
-        <PageHero
+        {/* <PageHero
           eyebrow="Careers"
           title={<>Join Our <span className="text-[#3F7E47]">Team</span></>}
           breadcrumbs={[{ label: 'Join Us' }]}
-        />
+        /> */}
         <section className="py-24 flex items-center justify-center bg-gray-50 min-h-[50vh]">
           <div className="text-center max-w-md px-4">
             <div className="w-20 h-20 bg-green-100 flex items-center justify-center mx-auto mb-6">
@@ -90,13 +90,13 @@ function JoinUs() {
 
   return (
     <div className="animate-fade-in">
-      <PageHero
+      {/* <PageHero
         eyebrow="Careers at FALCON"
         title={<>Join Our <span className="text-[#3F7E47]">Team</span></>}
         subtitle="Be a part of a dynamic, growing industry. We invest in our people as much as we invest in security."
         breadcrumbs={[{ label: 'Join Us' }]}
         backgroundImage="/documents/navlink_banner/company/joinus.jpeg"
-      />
+      /> */}
 
       {/* ── Intro banner ── */}
       {/* <div className="bg-dark py-12">

@@ -53,7 +53,7 @@ function LogoCard({ src, idx }) {
       <img
         src={src}
         alt={`Client ${idx + 1}`}
-        className="max-h-full max-w-full   transition-all duration-300"
+        className="max-h-full max-w-full img-sharp transition-all duration-300"
       />
     </div>
   )

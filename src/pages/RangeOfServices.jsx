@@ -5,7 +5,7 @@ function RangeOfServices() {
   return (
     <div className="animate-fade-in">
       {/* Hero */}
-      <div className="bg-dark text-white py-20">
+      {/* <div className="bg-dark text-white py-20">
         <div className="container-custom">
           <p className="text-[#3F7E47] font-semibold text-sm uppercase tracking-widest mb-3">
             Services
@@ -14,7 +14,7 @@ function RangeOfServices() {
             Range Of <span className="text-[#3F7E47]">Services</span>
           </h1>
         </div>
-      </div>
+      </div> */}
 
       {/* Services Detail */}
       <section className="py-20 bg-white">

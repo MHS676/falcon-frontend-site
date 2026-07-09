@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import PageHero from '../../components/ui/PageHero'
 import { 
   LuHandshake, 
@@ -11,29 +11,69 @@ import {
   LuUsers 
 } from 'react-icons/lu'
 
+const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:3000'
+
+const ICON_MAP = {
+  LuHandshake,
+  LuTrendingUp,
+  LuAward,
+  LuHeart,
+  LuShieldCheck,
+  LuGlobe,
+}
+
 export default function LifeAtFalcon() {
   const [email, setEmail] = useState('')
   const [sent, setSent] = useState(false)
+  const [pillars, setPillars] = useState([])
+  const [loading, setLoading] = useState(true)
 
-  const PILLARS = [
-    { icon: LuHandshake, title: 'Inclusive Culture', desc: 'A workplace that celebrates diversity, encourages collaboration, and ensures every voice is heard.' },
-    { icon: LuTrendingUp, title: 'Growth Mindset', desc: 'Continuous learning opportunities, certifications, and mentorship programs to help you advance.' },
-    { icon: LuAward, title: 'Recognition', desc: 'Your contributions matter. We celebrate achievements at every level of the organization.' },
-    { icon: LuHeart, title: 'Well-being', desc: 'Health benefits, flexible arrangements, and wellness initiatives that keep you at your best.' },
-    { icon: LuShieldCheck, title: 'Purpose-Driven', desc: 'Work that protects people and assets — making a tangible difference every single day.' },
-    { icon: LuGlobe, title: 'National Pride', desc: 'Serving all 64 districts of Bangladesh with a team that truly represents the nation.' },
+  // Default pillars if API fails
+  const DEFAULT_PILLARS = [
+    { icon: 'LuHandshake', title: 'Inclusive Culture', desc: 'A workplace that celebrates diversity, encourages collaboration, and ensures every voice is heard.' },
+    { icon: 'LuTrendingUp', title: 'Growth Mindset', desc: 'Continuous learning opportunities, certifications, and mentorship programs to help you advance.' },
+    { icon: 'LuAward', title: 'Recognition', desc: 'Your contributions matter. We celebrate achievements at every level of the organization.' },
+    { icon: 'LuHeart', title: 'Well-being', desc: 'Health benefits, flexible arrangements, and wellness initiatives that keep you at your best.' },
+    { icon: 'LuShieldCheck', title: 'Purpose-Driven', desc: 'Work that protects people and assets — making a tangible difference every single day.' },
+    { icon: 'LuGlobe', title: 'National Pride', desc: 'Serving all 64 districts of Bangladesh with a team that truly represents the nation.' },
   ]
+
+  useEffect(() => {
+    fetchPillars()
+  }, [])
+
+  const fetchPillars = async () => {
+    try {
+      const response = await fetch(`${API_URL}/api/pillars`)
+      if (!response.ok) throw new Error('Failed to fetch pillars')
+      const data = await response.json()
+      
+      // Transform API data to match component format
+      const transformedPillars = data.map((p) => ({
+        ...p,
+        desc: p.description,
+        icon: p.icon || 'LuAward',
+      }))
+      
+      setPillars(transformedPillars.length > 0 ? transformedPillars : DEFAULT_PILLARS)
+    } catch (error) {
+      console.warn('Using default pillars:', error)
+      setPillars(DEFAULT_PILLARS)
+    } finally {
+      setLoading(false)
+    }
+  }
 
   return (
     <div className="bg-[#FAF9F6] min-h-screen font-sans selection:bg-[#3F7E47]/20 selection:text-[#3F7E47]">
       {/* ── Modern Premium Page Hero ── */}
-      <PageHero
+      {/* <PageHero
         eyebrow="CULTURE & PEOPLE"
         title={<>Life at <span className="text-[#3F7E47] font-serif italic font-light">FALCON</span></>}
         subtitle="Discover what makes FALCON more than just a workplace—an ecosystem designed for collective human excellence."
         breadcrumbs={[{ label: 'Company', to: '/company/overview' }, { label: 'Life at FALCON' }]}
         backgroundImage="/documents/navlink_banner/company/lifeatfalcon.jpg"
-      />
+      /> */}
 
       {/* ── Culture Pillars Section ── */}
       <section className="py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative overflow-hidden">
@@ -55,27 +95,30 @@ export default function LifeAtFalcon() {
 
           {/* Premium Tactile Grid Structure */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {PILLARS.map((p, idx) => (
-              <div 
-                key={idx} 
-                className="group relative bg-white border border-neutral-200/60 rounded-[24px] p-8 shadow-[0_4px_20px_rgba(0,0,0,0.02)] hover:shadow-[0_20px_40px_rgba(0,0,0,0.05)] hover:-translate-y-1.5 transition-all duration-300"
-              >
-                {/* Micro-interactive Corner Accent */}
-                <div className="absolute top-0 right-0 w-24 h-24 bg-gradient-to-bl from-neutral-50 to-transparent rounded-tr-[24px] pointer-events-none" />
-                
-                {/* Icon Wrapper */}
-                <div className="w-12 h-12 rounded-xl bg-neutral-50 flex items-center justify-center text-[#3F7E47] border border-neutral-100 group-hover:bg-[#3F7E47] group-hover:text-white group-hover:scale-110 shadow-sm transition-all duration-300 mb-6">
-                  <p.icon className="w-5 h-5 transition-transform duration-300" />
-                </div>
+            {pillars.map((p, idx) => {
+              const IconComponent = ICON_MAP[p.icon] || ICON_MAP['LuAward']
+              return (
+                <div 
+                  key={idx} 
+                  className="group relative bg-white border border-neutral-200/60 rounded-[24px] p-8 shadow-[0_4px_20px_rgba(0,0,0,0.02)] hover:shadow-[0_20px_40px_rgba(0,0,0,0.05)] hover:-translate-y-1.5 transition-all duration-300"
+                >
+                  {/* Micro-interactive Corner Accent */}
+                  <div className="absolute top-0 right-0 w-24 h-24 bg-gradient-to-bl from-neutral-50 to-transparent rounded-tr-[24px] pointer-events-none" />
+                  
+                  {/* Icon Wrapper */}
+                  <div className="w-12 h-12 rounded-xl bg-neutral-50 flex items-center justify-center text-[#3F7E47] border border-neutral-100 group-hover:bg-[#3F7E47] group-hover:text-white group-hover:scale-110 shadow-sm transition-all duration-300 mb-6">
+                    <IconComponent className="w-5 h-5 transition-transform duration-300" />
+                  </div>
 
-                <h3 className="font-bold text-neutral-800 text-lg tracking-tight mb-2 group-hover:text-[#3F7E47] transition-colors duration-200">
-                  {p.title}
-                </h3>
-                <p className="text-neutral-500 text-sm leading-relaxed font-normal">
-                  {p.desc}
-                </p>
-              </div>
-            ))}
+                  <h3 className="font-bold text-neutral-800 text-lg tracking-tight mb-2 group-hover:text-[#3F7E47] transition-colors duration-200">
+                    {p.title}
+                  </h3>
+                  <p className="text-neutral-500 text-sm leading-relaxed font-normal">
+                    {p.desc}
+                  </p>
+                </div>
+              )
+            })}
           </div>
         </div>
       </section>

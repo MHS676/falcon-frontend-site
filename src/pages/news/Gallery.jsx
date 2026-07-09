@@ -108,13 +108,13 @@ export default function Gallery() {
 
   return (
     <div className="animate-fade-in">
-      <PageHero
+      {/* <PageHero
         eyebrow="Visual Journey"
         title={<>FALCON <span className="text-[#3F7E47]">Gallery</span></>}
         subtitle="Explore our operations, team, and services through images capturing FALCON's commitment to excellence."
         breadcrumbs={[{ label: 'News & Events' }, { label: 'Gallery' }]}
         backgroundImage="/documents/navlink_banner/company/44.jpeg"
-      />
+      /> */}
 
       {/* Stats bar */}
       {/* <div className="bg-[#3F7E47]">

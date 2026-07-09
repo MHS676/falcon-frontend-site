@@ -23,7 +23,7 @@ function WhatWeOffer() {
   return (
     <div className="animate-fade-in">
       {/* Hero */}
-      <div className="bg-dark text-white py-20">
+      {/* <div className="bg-dark text-white py-20">
         <div className="container-custom">
           <p className="text-[#3F7E47] font-semibold text-sm uppercase tracking-widest mb-3">
             Solutions
@@ -36,7 +36,7 @@ function WhatWeOffer() {
             expertise.
           </p>
         </div>
-      </div>
+      </div> */}
 
       {/* Services Grid */}
       <section className="py-20 bg-white">

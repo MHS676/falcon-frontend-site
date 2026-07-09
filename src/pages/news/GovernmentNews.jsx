@@ -7,12 +7,12 @@ export default function GovernmentNews() {
 
   return (
     <div className="animate-fade-in">
-      <PageHero
+      {/* <PageHero
         eyebrow="News & Events"
         title={<>Government <span className="text-[#3F7E47]">News</span></>}
         subtitle="Security industry developments, legislation, and government directives relevant to the private security sector."
         breadcrumbs={[{ label: 'News & Events' }, { label: 'Government News' }]}
-      />
+      /> */}
 
       {/* Source ribbon */}
       <div className="bg-dark border-b border-white/10">

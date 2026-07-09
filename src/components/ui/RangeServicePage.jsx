@@ -88,7 +88,7 @@ export default function RangeServicePage({ slug }) {
 
   return (
     <div className="animate-fade-in">
-      <PageHero
+      {/* <PageHero
         eyebrow={page.eyebrow}
         title={
           <>
@@ -106,7 +106,7 @@ export default function RangeServicePage({ slug }) {
           { label: page.title },
         ]}
         backgroundImage={page.banner}
-      />
+      /> */}
 
       {/* Stats bar */}
       {/* <div className={accent.bg}>

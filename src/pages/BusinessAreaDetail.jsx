@@ -14,7 +14,7 @@ function BusinessAreaDetail() {
 
   return (
     <div className="animate-fade-in">
-      <PageHero
+      {/* <PageHero
         eyebrow="Business Area"
         title={<>{area.title}</>}
         subtitle={area.shortDescription}
@@ -24,7 +24,7 @@ function BusinessAreaDetail() {
           { label: area.title }
         ]}
         backgroundImage={area.image}
-      />
+      /> */}
 
       {/* Statistics Bar */}
       {area.statistics && (

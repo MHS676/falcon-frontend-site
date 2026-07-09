@@ -7,13 +7,13 @@ export default function FalconNews() {
 
   return (
     <div className="animate-fade-in">
-      <PageHero
+      {/* <PageHero
         eyebrow="News & Events"
         title={<>FALCON <span className="text-[#3F7E47]">News</span></>}
         subtitle="The latest announcements, milestones, and operational updates from FALCON Security."
         breadcrumbs={[{ label: 'News & Events' }, { label: 'FALCON News' }]}
         backgroundImage="/documents/navlink_banner/events/WhatsApp%20Image%202026-06-03%20at%2011.15.51%20AM.jpeg"
-      />
+      /> */}
 
       {/* Stats bar */}
       {/* <div className="bg-[#3F7E47]">

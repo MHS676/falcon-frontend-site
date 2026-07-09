@@ -92,7 +92,7 @@ function LeaderModal({ leader, onClose }) {
           <div className="flex flex-col sm:flex-row gap-6 items-center sm:items-start text-center sm:text-left mb-6">
             <div className="w-24 h-24 shrink-0 rounded-[20px] bg-[#E6E5E0] p-1.5 shadow-[inset_4px_4px_8px_#b8b7b2,inset_-4px_-4px_8px_#ffffff]">
               {leader.image ? (
-                <img src={leader.image} alt={leader.name} className="w-full h-full object-cover rounded-[14px]" />
+                <img src={leader.image} alt={leader.name} className="w-full h-full object-cover rounded-[14px] img-sharp" />
               ) : (
                 <div className="w-full h-full flex items-center justify-center rounded-[14px] bg-[#DDDCD6] text-neutral-600 font-bold text-xl">
                   {leader.name.split(' ').map(n => n[0]).join('')}

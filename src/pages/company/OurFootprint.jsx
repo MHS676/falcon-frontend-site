@@ -35,13 +35,13 @@ function OurFootprint() {
 
   return (
     <div className="animate-fade-in">
-      <PageHero
+      {/* <PageHero
         eyebrow="Nationwide Presence"
         title={<>Our <span className="text-[#3F7E47]">Footprint</span></>}
         subtitle="Coverage spans 64 districts, with 5,000 personnel and 400+ clients across 25+ offices."
         breadcrumbs={[{ label: 'Company', to: '/company/overview' }, { label: 'Our Footprint' }]}
         backgroundImage="/documents/navlink_banner/company/our-footprint.jpg"
-      />
+      /> */}
 
       {/* ── Stats bar ── */}
       {/* <div className="bg-[#3F7E47]">

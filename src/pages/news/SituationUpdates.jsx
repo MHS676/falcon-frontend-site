@@ -46,13 +46,13 @@ export default function SituationUpdates() {
 
   return (
     <div className="animate-fade-in">
-      <PageHero
+      {/* <PageHero
         eyebrow="News & Events"
         title={<>Situation <span className="text-[#3F7E47]">Updates</span></>}
         subtitle="Real-time operational advisories, threat assessments, and security situation reports across Bangladesh."
         breadcrumbs={[{ label: 'News & Events' }, { label: 'Situation Updates' }]}
         bgClass="bg-gradient-to-br from-slate-900 via-dark to-black"
-      />
+      /> */}
 
       {/* Legend */}
       <div className="bg-dark border-b border-white/10">
