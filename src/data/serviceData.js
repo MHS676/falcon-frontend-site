@@ -544,22 +544,34 @@ export const SERVICE_PAGES = {
     eyebrow: 'Range of Services',
     title: 'Training & Development',
     tagline: 'Professional security training programs producing skilled, certified, and capable security personnel.',
-    intro: `FALCON's Training & Development division operates Bangladesh's premier private security training programme.
-    Our new National Training Centre located in Kaliganj — just 12 km from the airport — delivers comprehensive
-    training for security guards, supervisors, and officers. In partnership with ALSOK Japan, we combine international
-    best practice with local operational expertise to produce security professionals of the highest calibre.`,
+    intro: `Over 30% of Falcon® guard force are deployed in contracts where highly skilled work under stringent safety and security standard are maintained. This has led us to years of experience in Health Environment Safety (HES) training, for which the guard force has become fully compliant. Moreover, we focus on to attract, reward and retain the highest caliber security personnel by offering the best possible base salary. This ensures a comfortable and secure environment for our personnel to face the challenges of security duty.`,
     highlights: [
       { value: 'National', label: 'Training Centre' },
       { value: 'Certified', label: 'Programmes' },
       { value: 'Aviation', label: 'Specialist Unit' },
     ],
-    features: [
-      { title: 'Basic Security Guard Training', desc: 'Foundation training covering security principles, access control, patrol techniques, emergency response, and professional conduct.' },
-      { title: 'Supervisor & Officer Development', desc: 'Advanced training for supervisory and officer-grade personnel covering command, reporting, and team leadership.' },
-      { title: 'Specialist Security Training', desc: 'Specialized programmes including aviation security, close protection, crowd management, and crisis response.' },
-      { title: 'Aviation Security Programme', desc: 'Dedicated aviation security training and an operational centre in Uttara supporting airport security operations.' },
-      { title: 'Refresher & CPD Training', desc: 'Regular refresher courses and continuous professional development for all serving security personnel.' },
-    ],
+features: [
+  {
+    title: 'Health Environment Safety (HES) Training',
+    desc: 'Years of experience in Health Environment Safety (HES) training ensures our guard force remains fully compliant with industry safety and security standards.',
+  },
+  {
+    title: 'Professional Security Training',
+    desc: 'Security personnel receive continuous training to perform duties efficiently while maintaining the highest level of professionalism and discipline.',
+  },
+  {
+    title: 'Highly Skilled Guard Force',
+    desc: 'Over 30% of Falcon guard force are deployed in contracts where highly skilled work under stringent safety and security standards are maintained.',
+  },
+  {
+    title: 'Personnel Development',
+    desc: 'We focus on attracting, rewarding and retaining the highest caliber security personnel by offering the best possible base salary and career development opportunities.',
+  },
+  {
+    title: 'Operational Readiness',
+    desc: 'Our training programme prepares security personnel to work confidently in challenging environments while maintaining quality service and client satisfaction.',
+  },
+],
     whyUs: [
       'Bangladesh\'s first dedicated private security academy',
       'Purpose-built training facility',
