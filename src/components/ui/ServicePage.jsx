@@ -150,7 +150,7 @@ export default function ServicePage({ slug }) {
                   {page.features.map((f) => (
                     <div
                       key={f.title}
-                      className={`border-l-4 ${accent.border} bg-gray-50 p-5 hover:shadow-sm transition-shadow`}
+                      className={`border-l-4 border-[#3F7E47] bg-gray-50 p-5 hover:shadow-sm transition-shadow`}
                     >
                       <h3 className="font-black text-dark text-sm mb-2">{f.title}</h3>
                       <p className="text-gray-500 text-sm leading-relaxed">{f.desc}</p>

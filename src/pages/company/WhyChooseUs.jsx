@@ -139,7 +139,7 @@ function WhyChooseUs() {
             {DIFFERENTIATORS.map((item, index) => (
               <div
                 key={index}
-                className="bg-white border-l-4 border-primary p-6 hover:shadow-md transition-shadow duration-300"
+                className="bg-white border-l-4 border-[#3F7E47] p-6 hover:shadow-md transition-shadow duration-300"
               >
                 <h3 className="text-lg font-black text-dark mb-2">{item.label}</h3>
                 <p className="text-sm text-gray-600 leading-relaxed">{item.description}</p>
