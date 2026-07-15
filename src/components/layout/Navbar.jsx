@@ -18,7 +18,7 @@ function MegaDropdown({ groups, onClose }) {
 
   return (
     <div
-      className={`absolute top-full left-1/2 -translate-x-1/2 mt-0 bg-white shadow-2xl border-t-2 border-primary z-50
+      className={`absolute top-full left-1/2 -translate-x-1/2 mt-0 bg-white shadow-2xl  z-50
         grid ${colMap[cols] || 'grid-cols-2'} ${widthMap[cols] || 'w-[480px]'}`}
     >
       {groups.map((group, gi) => (

@@ -149,7 +149,7 @@ export default function RangeServicePage({ slug }) {
                 </h2>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                   {page.features.map((f) => (
-                    <div key={f.title} className={`border-l-4 ${accent.border} bg-gray-50 p-5 hover:shadow-sm transition-shadow`}>
+                    <div key={f.title} className={`border-l-4 border-[#3F7E47] bg-gray-50 p-5 hover:shadow-sm transition-shadow`}>
                       <h3 className="font-black text-dark text-sm mb-2">{f.title}</h3>
                       <p className="text-gray-500 text-sm leading-relaxed">{f.desc}</p>
                     </div>

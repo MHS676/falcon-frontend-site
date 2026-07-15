@@ -5,7 +5,7 @@ import { OFFER_PAGES } from '../../data/offerData'
 
 // Colour accent map
 const ACCENT = {
-  red:    { bg: 'bg-[#3F7E47]',    text: 'text-[#3F7E47]',    border: 'border-primary',    light: 'bg-[#3F7E47]/10'    },
+  red:    { bg: 'bg-[#3F7E47]',    text: 'text-[#3F7E47]',    border: 'border-[#3F7E47]',    light: 'bg-[#3F7E47]/10'    },
   blue:   { bg: 'bg-[#3F7E47]',   text: 'text-[#3F7E47]',   border: 'border-[#3F7E47]',   light: 'bg-[#3F7E47]/10'       },
   purple: { bg: 'bg-[#3F7E47]', text: 'text-[#3F7E47]', border: 'border-[#3F7E47]', light: 'bg-[#3F7E47]/10'     },
   yellow: { bg: 'bg-[#3F7E47]', text: 'text-[#3F7E47]', border: 'border-[#3F7E47]', light: 'bg-[#3F7E47]/10'     },

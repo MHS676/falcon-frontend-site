@@ -65,7 +65,7 @@ function BusinessAreaDetail() {
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   {area.keyFeatures.map((feature, i) => (
-                    <div key={i} className="flex items-start gap-3 bg-gray-50 p-4 border-l-2 border-primary">
+                    <div key={i} className="flex items-start gap-3 bg-gray-50 p-4 border-l-2 border-[#3F7E47]">
                       <HiCheckCircle className="w-5 h-5 text-[#3F7E47] shrink-0 mt-0.5" />
                       <span className="text-sm text-gray-700 leading-relaxed">{feature}</span>
                     </div>
@@ -106,7 +106,7 @@ function BusinessAreaDetail() {
             {/* Sidebar */}
             <div className="space-y-6">
               {/* Category badge */}
-              <div className="bg-[#3F7E47]/10 border-l-4 border-primary p-6">
+              <div className="bg-[#3F7E47]/10 border-l-4 border-[#3F7E47] p-6">
                 <p className="text-xs font-bold uppercase tracking-widest text-gray-500 mb-2">Category</p>
                 <p className="text-lg font-black text-dark">{area.category}</p>
               </div>

@@ -17,7 +17,7 @@ function BusinessAreasSection() {
             <Link
               key={area.id}
               to={`/business-areas/${area.slug}`}
-              className="group bg-white border border-gray-200 overflow-hidden hover:shadow-2xl hover:border-primary transition-all duration-300"
+              className="group bg-white border border-gray-200 overflow-hidden hover:shadow-2xl hover:border-[#3F7E47] transition-all duration-300"
             >
               {/* Image */}
               <div className="relative h-56 overflow-hidden">
