@@ -4,14 +4,14 @@ Professional React + Tailwind CSS frontend for **FALCON Security** — Banglades
 
 ## Tech Stack
 
-| Tool | Purpose |
-|---|---|
-| **Vite** | Build tool & dev server |
-| **React 18** | UI library |
-| **React Router v6** | Client-side routing |
-| **Tailwind CSS v3** | Utility-first styling |
-| **Context API** | Global state management |
-| **React Icons** | Icon library |
+| Tool                      | Purpose                 |
+| ------------------------- | ----------------------- |
+| **Vite**            | Build tool & dev server |
+| **React 18**        | UI library              |
+| **React Router v6** | Client-side routing     |
+| **Tailwind CSS v3** | Utility-first styling   |
+| **Context API**     | Global state management |
+| **React Icons**     | Icon library            |
 
 ---
 
@@ -78,11 +78,11 @@ npm run preview
 
 ## Context API Overview
 
-| Context | Purpose |
-|---|---|
-| `AppContext` | Company info, services, news data; `useReducer` pattern |
-| `UIContext` | Mobile menu, scroll detection, modals, toast notifications |
-| `ContactContext` | Contact form state, validation, and submission |
+| Context            | Purpose                                                    |
+| ------------------ | ---------------------------------------------------------- |
+| `AppContext`     | Company info, services, news data;`useReducer` pattern   |
+| `UIContext`      | Mobile menu, scroll detection, modals, toast notifications |
+| `ContactContext` | Contact form state, validation, and submission             |
 
 Import hooks: `useApp()`, `useUI()`, `useContact()`
 
